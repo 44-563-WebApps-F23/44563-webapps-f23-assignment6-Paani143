@@ -41,23 +41,23 @@ function checkAuthor ()
     <img id="image" src="abudhabi.jpg" alt="Abudhabi" width="100" height="100" onclick="selectImage()">  
 </div>
 <script>
-    var usImage=1;
+    var useImage=1;
     function selectImage()
     {
      var p=document.querySelector('.imagecontainer #image');
-     switch(usImage)
+     switch(useImage)
      {
         case 1: 
             p.src= 'amsterdam.jpg';
-            usImage=2;
+            useImage=2;
             break;
         case 2:
             p.src= 'bangalore.jpg';
-            usImage = 3;
+            useImage = 3;
             break;
          case 3:
             p.src ='abudhabi.jpg';
-            usImage=1;
+            useImage=1;
             break;
         }
 
