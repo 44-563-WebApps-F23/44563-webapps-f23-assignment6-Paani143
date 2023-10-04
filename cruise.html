@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head><title>Ship Journey</title></head>
+<body>
+
+<h2>Pinakapaani goes on a cruise</h2>
+
+<form>
+    <label for="SharesCabin">Shares Cabin</label>
+    <input type ="checkbox" id="SharesCabin" value=True> <br>
+
+    <label for="Breakfast">Breakfast</label>
+    <input type ="checkbox" id="Breakfast" value=True> <br>
+
+    <label for="PoolPass">Pool Pass</label>
+    <input type ="checkbox" id="PoolPass" value=False> <br>
+
+    <input type="button" onclick="selectCruise()" value="Get values from form">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+    var my_cruise = {};
+    function selectCruise()
+    {
+        sharescabin=document.getElementById("SharesCabin");
+        breakfast=document.getElementById("Breakfast");
+        poolpass=document.getElementById("PoolPass");
+        my_cruise.sharescabin=sharescabin.checked;
+        my_cruise.breakfast=breakfast.checked;
+        my_cruise.poolpass=poolpass.checked;
+        document.getElementById("result").innerHTML=JSON.stringify(my_cruise);
+    }
+
+</script>
+
+</body>
+</html> 
