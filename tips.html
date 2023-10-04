@@ -18,6 +18,13 @@
 
 <p id="result"> </p>
 
+ <form>
+    <label><input type="radio" name="op" id="sum" value="sum" onclick="chooseOp()">sum</label>
+    <label><input type="radio" name="op" id="difference" value="difference" onclick="chooseOp()">diff</label>
+    <label><input type="radio" name="op" id="product" value="product" onclick="chooseOp()">mult</label>
+     </form>
+ <p id="output"></p>
+
 <script> 
 
 function tips (){
@@ -36,6 +43,28 @@ function tips (){
     out.innerHTML="Tips are : "+myOutput;
     
 }
+</script>
+<script>
+
+    function chooseOp()
+    {
+        var baseamount = parseFloat(document.getElementById("base_amount").value);
+        var tippercent = parseFloat(document.getElementById("conv_amount").value);
+        operation = document.querySelector('input[name="op"]:checked').value;
+        var output= document.getElementById("output").innerHTML;
+        switch(operation)
+        {
+            case "sum":
+                output=baseamount+tippercent;
+                break;
+            case "difference":
+                output=baseamount-tippercent;
+                break;
+            case "product": 
+                output=baseamount*tippercent;       
+        }
+        document.getElementById("output").innerHTML=`${operation} of ${baseamount} and ${tippercent} is ${output}`
+    }
 </script>
 
 </body>
