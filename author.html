@@ -31,9 +31,15 @@ function checkAuthor ()
         result.innerHTML= `Good Guesses: ${good}`;
     }else{
         oops++;
+        if(oops >=7){
+            document.getElementById("display").onclick=bonusGuess();
+        }
         alert("Sorry");
         result.innerHTML= `Wrong Guesses: ${oops}`;
     }
+}
+function bonusGuess(){
+    alert("Sorry, you run out of guess");
 }
 </script>
 <br>
